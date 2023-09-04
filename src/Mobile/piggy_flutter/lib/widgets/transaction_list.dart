@@ -68,6 +68,7 @@ class TransactionList extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text('${item.title}',
+
               style: Theme.of(context).textTheme.headline6!.copyWith(
                   fontSize: 16.0,
                   color: Theme.of(context).colorScheme.secondary)),

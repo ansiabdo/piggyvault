@@ -16,6 +16,7 @@ import 'package:piggy_flutter/screens/transaction/transaction_form.dart';
 import 'package:piggy_flutter/theme/piggy_app_theme.dart';
 import 'package:piggy_flutter/utils/common.dart';
 import 'package:piggy_flutter/widgets/common/common.dart';
+import 'dart:developer' as developer;
 
 import 'bottom_bar_view.dart';
 
@@ -86,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    developer.log('started');
     for (TabIconData tab in tabIconsList) {
       tab.isSelected = false;
     }

@@ -22,14 +22,14 @@ Write-Host 'Start copy folders...'
 $newRoot=$newCompanyName+"."+$newProjectName
 mkdir $newRoot
 Copy-Item -Recurse .\aspnet-core\ .\$newRoot\
-Copy-Item -Recurse .\vue\ .\$newRoot\
+Copy-Item -Recurse .\angular\ .\$newRoot\
 Copy-Item .gitignore .\$newRoot\
 Copy-Item LICENSE .\$newRoot\
 Copy-Item README.md .\$newRoot\
 
 # folders to deal with
 $slnFolder = (Get-Item -Path "./$newRoot/aspnet-core/" -Verbose).FullName
-$vueFolder = (Get-Item -Path "./$newRoot/vue/" -Verbose).FullName
+$angularFolder = (Get-Item -Path "./$newRoot/angular/" -Verbose).FullName
 
 function Rename {
 	param (
@@ -77,5 +77,5 @@ function Rename {
 }
 
 Rename -TargetFolder $slnFolder -PlaceHolderCompanyName $oldCompanyName -PlaceHolderProjectName $oldProjectName -NewCompanyName $newCompanyName -NewProjectName $newProjectName
-Rename -TargetFolder $vueFolder -PlaceHolderCompanyName $oldCompanyName -PlaceHolderProjectName $oldProjectName -NewCompanyName $newCompanyName -NewProjectName $newProjectName
+Rename -TargetFolder $angularFolder -PlaceHolderCompanyName $oldCompanyName -PlaceHolderProjectName $oldProjectName -NewCompanyName $newCompanyName -NewProjectName $newProjectName
 
